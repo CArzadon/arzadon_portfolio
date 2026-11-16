@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chrissa Arzadon | Portfolio</title>
+  <link rel="icon" href="p1 (1).jpg">
+
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#1A1918',
+            'ink-soft': '#524E4A',
+            ivory: '#FAF8F5',
+            sand: '#F1ECE4',
+            'sand-border': '#E2DBD0',
+            bronze: '#8E6248',
+            'bronze-light': '#A97C61',
+            slateaccent: '#4F5D6B',
+          },
+          fontFamily: {
+            serif: ['"Satoshi"','serif'],
+            sans: ['sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Satoshi', sans-serif;
+      background-color: #FAF8F5;
+      color: #1A1918;
+      overflow-x: hidden;
+    }
+
+    .bg-grain {
+      background-image: radial-gradient(rgba(26, 25, 24, 0.035) 1px, transparent 0);
+      background-size: 28px 28px;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 32s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @keyframes spinSlow {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    .spin-slow {
+      animation: spinSlow 24s linear infinite;
+    }
+  </style>
+</head>
+
+<body class="bg-ivory text-ink selection:bg-bronze/20 selection:text-ink antialiased">
+
+  <header class="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 z-50 w-[94%] max-w-6xl">
+    <nav
+      class="bg-ivory/85 backdrop-blur-xl border border-sand-border rounded-full px-5 md:px-7 py-3 shadow-[0_12px_36px_-12px_rgba(26,25,24,0.08)] flex items-center justify-between transition-all">
+      <a href="#personal" class="flex items-center gap-2.5 group">
+        <span
+          class="w-9 h-9 rounded-full bg-ink text-ivory flex items-center justify-center font-serif text-lg font-semibold tracking-wider group-hover:bg-bronze transition-colors">
+          CA
+        </span>
+        <span class="hidden sm:inline-block font-serif text-xl font-semibold tracking-tight text-ink">
+          Chrissa <span class="italic font-normal text-bronze">Arzadon</span>
+        </span>
+      </a>
+
+      <div class="hidden lg:flex items-center gap-1">
+        <a href="#personal"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">About</a>
+        <a href="#services"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">Services</a>
+        <a href="#experience"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">Works & Experience</a>
+        <a href="#technical-skills"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">Tech Stack</a>
+        <a href="#competencies"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">Competencies</a>
+        <a href="#education"
+          class="px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider text-ink-soft hover:text-ink hover:bg-sand transition-colors">Credentials</a>
+      </div>
+
+      <div class="flex items-center gap-2.5">
+        <a href="#contact"
+          class="hidden sm:inline-flex items-center gap-2 bg-ink text-ivory px-5 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider hover:bg-bronze transition-all duration-300 shadow-sm">
+          <span>Let's Connect</span>
+          <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+        </a>
+
+        <button id="mobileMenuBtn" type="button" aria-label="Toggle Menu"
+          class="lg:hidden w-10 h-10 rounded-full bg-sand border border-sand-border flex items-center justify-center text-ink hover:bg-ink hover:text-ivory transition-colors">
+          <i data-lucide="menu" class="w-4 h-4"></i>
+        </button>
+      </div>
+    </nav>
+
+    <div id="mobileMenu"
+      class="hidden lg:hidden mt-3 bg-ivory/95 backdrop-blur-xl border border-sand-border rounded-3xl p-5 shadow-xl">
+      <div class="flex flex-col space-y-1">
+        <a href="#personal"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">About</a>
+        <a href="#services"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">Services Offered</a>
+        <a href="#experience"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">Works & Experience</a>
+        <a href="#technical-skills"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">Technical Stack</a>
+        <a href="#competencies"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">Core Competencies</a>
+        <a href="#education"
+          class="mobile-nav-link px-4 py-3 rounded-2xl text-sm font-medium text-ink hover:bg-sand transition-colors">Education & Certifications</a>
+        <a href="#contact"
+          class="mobile-nav-link mt-2 bg-ink text-ivory text-center px-4 py-3 rounded-2xl text-sm font-semibold hover:bg-bronze transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <section id="personal" class="relative min-h-screen pt-32 pb-20 lg:pt-36 lg:pb-24 px-6 bg-grain overflow-hidden flex items-center">
+    <div class="absolute -top-24 -left-24 w-96 h-96 bg-sand rounded-full blur-3xl opacity-80 pointer-events-none"></div>
+    <div class="absolute bottom-10 -right-24 w-[28rem] h-[28rem] bg-slateaccent/10 rounded-full blur-3xl opacity-70 pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto w-full grid lg:grid-cols-12 gap-12 lg:gap-10 items-center relative z-10">
+
+      <div class="lg:col-span-7 text-center lg:text-left reveal is-visible">
+        <div
+          class="inline-flex items-center gap-2.5 bg-white/80 backdrop-blur border border-sand-border px-4 py-2 rounded-full mb-7 shadow-sm">
+          <span class="relative flex h-2 w-2">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-bronze opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2 w-2 bg-bronze"></span>
+          </span>
+          <span class="text-xs font-semibold uppercase tracking-widest text-ink-soft">
+            Executive Virtual Assistant & Social Media Manager
+          </span>
+        </div>
+
+        <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-[5.25rem] font-semibold text-ink leading-[0.98] tracking-tight mb-7">
+          Elevating Daily <br class="hidden sm:block" />
+          Operations with <span class="italic font-normal text-bronze">Precision.</span>
+        </h1>
+
+        <p class="text-sm sm:text-base text-ink-soft leading-relaxed mb-9 max-w-2xl mx-auto lg:mx-0">
+          I am <strong class="font-semibold text-ink">Chrissa Arzadon</strong>. I provide high-level executive and administrative support to business owners, coaches, and entrepreneurs—helping them optimize daily operations, streamline workflows, and achieve strategic business objectives. With a focus on operational efficiency, calendar and inbox management, project coordination, and professional communication, I ensure essential business activities run seamlessly.
+        </p>
+
+        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 mb-10">
+          <a href="mailto:crissaarzadon@gmail.com"
+            class="inline-flex items-center gap-2.5 bg-ink text-ivory px-7 py-3.5 rounded-full text-sm font-semibold hover:bg-bronze transition-all duration-300 shadow-[0_12px_28px_-8px_rgba(26,25,24,0.3)] hover:-translate-y-0.5">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>crissaarzadon@gmail.com</span>
+          </a>
+
+          <button type="button" onclick="copyEmail(this)"
+            class="inline-flex items-center gap-2 bg-white text-ink px-5 py-3.5 rounded-full text-sm font-semibold border border-sand-border hover:border-ink transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+            <i data-lucide="copy" class="w-4 h-4 text-bronze"></i>
+            <span class="copy-label">Copy Email</span>
+          </button>
+
+          <a href="https://www.linkedin.com/in/chrissa-arzadon-85952442a" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            class="w-12 h-12 rounded-full bg-white border border-sand-border flex items-center justify-center text-ink hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+            <i class="bi bi-linkedin text-base leading-none"></i>
+          </a>
+
+          <a href="https://bit.ly/Instagramchrissacabradilla" target="_blank" rel="noopener noreferrer"
+            aria-label="Instagram"
+            class="w-12 h-12 rounded-full bg-white border border-sand-border flex items-center justify-center text-ink hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300 shadow-sm hover:-translate-y-0.5">
+            <i class="bi bi-instagram text-base leading-none"></i>
+          </a>
+        </div>
+
+        <div class="pt-7 border-t border-sand-border grid grid-cols-3 gap-4 max-w-lg mx-auto lg:mx-0 text-left">
+          <div>
+            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-ink">B.S.</span>
+            <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft">Mathematics</span>
+          </div>
+          <div class="border-l border-sand-border pl-4">
+            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-ink">Dual</span>
+            <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft">VA & SMM Certified</span>
+          </div>
+          <div class="border-l border-sand-border pl-4">
+            <span class="block font-serif text-2xl sm:text-3xl font-semibold text-ink">100%</span>
+            <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft">Confidentiality</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-5 flex justify-center items-center reveal is-visible">
+        <div class="relative w-[290px] sm:w-[350px] lg:w-[390px]">
+          <div
+            class="absolute inset-0 translate-x-3.5 translate-y-3.5 rounded-t-[14rem] rounded-b-[2rem] border border-bronze/40 pointer-events-none">
+          </div>
+
+          <div class="hidden sm:flex absolute -top-5 -right-5 z-20 w-24 h-24 rounded-full bg-ivory border border-sand-border shadow-md items-center justify-center">
+            <svg viewBox="0 0 100 100" class="w-20 h-20 spin-slow text-ink-soft">
+              <defs>
+                <path id="circlePath" d="M 50, 50 m -36, 0 a 36,36 0 1,1 72,0 a 36,36 0 1,1 -72,0" />
+              </defs>
+              <text font-size="9.2" font-weight="600" letter-spacing="2.3" fill="currentColor">
+                <textPath href="#circlePath">EXECUTIVE SUPPORT • STRATEGY • </textPath>
+              </text>
+            </svg>
+            <i data-lucide="sparkles" class="w-4 h-4 text-bronze absolute"></i>
+          </div>
+
+          <div
+            class="relative z-10 aspect-[4/5] rounded-t-[14rem] rounded-b-[2rem] overflow-hidden border-[6px] border-white shadow-[0_30px_60px_-15px_rgba(26,25,24,0.16)] bg-sand group">
+            <img src="profile.png" alt="Chrissa Arzadon - Executive Virtual Assistant"
+              class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]">
+            <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink/40 via-ink/10 to-transparent pointer-events-none"></div>
+          </div>
+
+          <div
+            class="relative z-20 -mt-8 mx-4 sm:mx-6 bg-white/95 backdrop-blur-md border border-sand-border rounded-2xl p-4 shadow-lg flex items-center justify-between gap-3">
+            <div>
+              <p class="text-[11px] font-bold uppercase tracking-widest text-bronze">Dedicated Partner</p>
+              <p class="font-serif text-lg font-semibold text-ink leading-tight">Operations & Brand Growth</p>
+            </div>
+            <div class="w-10 h-10 rounded-xl bg-sand flex items-center justify-center text-ink flex-shrink-0">
+              <i data-lucide="briefcase" class="w-4 h-4"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="w-full bg-ink text-ivory py-4 border-y border-ink overflow-hidden">
+    <div class="marquee-track flex items-center gap-10 text-xs sm:text-sm font-medium uppercase tracking-[0.22em]">
+      <span class="flex items-center gap-10">
+        <span>Executive Support</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Shopify Store Operations</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Workflow Optimization</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Social Media Management</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Project Coordination</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Inbox & Calendar Mastery</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Brand Strategy</span>
+        <span class="text-bronze-light">◆</span>
+      </span>
+      <span class="flex items-center gap-10" aria-hidden="true">
+        <span>Executive Support</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Shopify Store Operations</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Workflow Optimization</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Social Media Management</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Project Coordination</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Inbox & Calendar Mastery</span>
+        <span class="text-bronze-light">◆</span>
+        <span>Brand Strategy</span>
+        <span class="text-bronze-light">◆</span>
+      </span>
+    </div>
+  </div>
+
+  <section id="services" class="w-full py-24 lg:py-28 bg-white border-b border-sand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-6 items-end mb-16 reveal">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze block mb-3">01 / Services Offered</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink tracking-tight leading-tight">
+            Tailored Support for <span class="italic font-normal text-bronze">High-Impact</span> Leaders
+          </h2>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="text-sm sm:text-base text-ink-soft leading-relaxed">
+            My goal is to help business owners, coaches, and entrepreneurs streamline their operations, strengthen their online presence, and maximize productivity through dependable executive assistance and digital support services.
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
+        <div
+          class="reveal bg-ink text-ivory rounded-[2rem] p-8 sm:p-11 flex flex-col justify-between relative overflow-hidden group shadow-[0_24px_48px_-16px_rgba(26,25,24,0.22)]">
+          <div class="absolute top-0 right-0 w-64 h-64 bg-bronze/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
+
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="text-xs font-bold uppercase tracking-widest text-bronze-light bg-white/5 border border-white/10 px-3.5 py-1.5 rounded-full">
+                Virtual Assistant Services
+              </span>
+              <span class="font-serif text-3xl text-white/25 font-semibold">01</span>
+            </div>
+
+            <h3 class="font-serif text-3xl sm:text-4xl font-semibold mb-3 tracking-tight">
+              Executive & Operations Support
+            </h3>
+            <p class="text-sm text-ivory/70 mb-8 leading-relaxed">
+              Structured back-office management designed to protect your focus and keep every operational detail moving forward.
+            </p>
+
+            <ul class="space-y-4 border-t border-white/10 pt-7">
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="shield-check" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Executive and Administrative Support</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="calendar" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Calendar, Email, and Inbox Management</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="shopping-bag" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Shopify Store Management, Order Fulfillment & Inventory Support</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="kanban" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Project Coordination and Task Management</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="message-square" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Business Communication and Correspondence</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="file-text" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Research, Data Entry, and Document Preparation</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ivory/90">
+                <i data-lucide="cpu" class="w-5 h-5 text-bronze-light flex-shrink-0 mt-0.5"></i>
+                <span>Workflow and Operations Support</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="mt-9 pt-6 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs text-ivory/60">Ideal for founders & executives</span>
+            <a href="mailto:crissaarzadon@gmail.com?subject=Executive%20VA%20Inquiry"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-bronze-light hover:text-white transition-colors">
+              Inquire Now <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="reveal bg-sand border border-sand-border text-ink rounded-[2rem] p-8 sm:p-11 flex flex-col justify-between relative overflow-hidden group hover:border-bronze/40 transition-colors">
+          <div>
+            <div class="flex items-center justify-between mb-8">
+              <span class="text-xs font-bold uppercase tracking-widest text-bronze bg-white border border-sand-border px-3.5 py-1.5 rounded-full">
+                Digital Growth
+              </span>
+              <span class="font-serif text-3xl text-ink/20 font-semibold">02</span>
+            </div>
+
+            <h3 class="font-serif text-3xl sm:text-4xl font-semibold mb-3 tracking-tight">
+              Brand & Social Media Management
+            </h3>
+            <p class="text-sm text-ink-soft mb-8 leading-relaxed">
+              Cohesive visual storytelling, consistent content scheduling, and thoughtful audience engagement that strengthens your brand presence.
+            </p>
+
+            <ul class="space-y-4 border-t border-sand-border pt-7">
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ink/90">
+                <i data-lucide="palette" class="w-5 h-5 text-bronze flex-shrink-0 mt-0.5"></i>
+                <span>Branding and Graphic Design</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ink/90">
+                <i data-lucide="layout" class="w-5 h-5 text-bronze flex-shrink-0 mt-0.5"></i>
+                <span>Social Media Management and Content Creation</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ink/90">
+                <i data-lucide="calendar-days" class="w-5 h-5 text-bronze flex-shrink-0 mt-0.5"></i>
+                <span>Content Planning and Scheduling</span>
+              </li>
+              <li class="flex items-start gap-3.5 text-sm sm:text-base text-ink/90">
+                <i data-lucide="headphones" class="w-5 h-5 text-bronze flex-shrink-0 mt-0.5"></i>
+                <span>Client Relations and Customer Support</span>
+              </li>
+            </ul>
+
+            <div class="mt-8 bg-white/80 border border-sand-border rounded-2xl p-5">
+              <div class="flex items-start gap-3">
+                <i data-lucide="trending-up" class="w-5 h-5 text-bronze flex-shrink-0 mt-0.5"></i>
+                <p class="text-xs sm:text-sm text-ink-soft leading-relaxed">
+                  Combining analytical performance tracking with cohesive visual design so your social channels stay consistent, intentional, and responsive.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-9 pt-6 border-t border-sand-border flex items-center justify-between">
+            <span class="text-xs text-ink-soft">Ready to optimize your workflow?</span>
+            <a href="mailto:crissaarzadon@gmail.com?subject=Social%20Media%20Management%20Inquiry"
+              class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-bronze hover:text-ink transition-colors">
+              Let's Collaborate <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="experience" class="w-full py-24 lg:py-28 bg-ivory bg-grain border-b border-sand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-6 items-end mb-16 reveal">
+        <div class="lg:col-span-7">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze block mb-3">02 / Works & Experience</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink tracking-tight leading-tight">
+            E-Commerce & Executive <span class="italic font-normal text-bronze">Track Record</span>
+          </h2>
+        </div>
+        <div class="lg:col-span-5">
+          <p class="text-sm sm:text-base text-ink-soft leading-relaxed">
+            Hands-on operational experience managing Shopify storefronts, coordinating high-volume executive schedules, and maintaining accurate financial and inventory ledgers.
+          </p>
+        </div>
+      </div>
+
+      <div class="reveal bg-white rounded-[2rem] p-8 sm:p-11 border border-sand-border shadow-[0_20px_44px_-16px_rgba(26,25,24,0.08)] mb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 pb-8 border-b border-sand-border">
+          <div>
+            <div class="inline-flex items-center gap-2 bg-sand text-bronze text-xs font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full mb-3">
+              <i data-lucide="shopping-bag" class="w-3.5 h-3.5"></i>
+              <span>Featured Role · E-Commerce Operations</span>
+            </div>
+            <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-ink tracking-tight">
+              Shopify Virtual Assistant & Store Operations Specialist
+            </h3>
+            <p class="text-sm font-semibold text-ink-soft mt-1">
+              D2C Retail & E-Commerce Brands · Remote Operations
+            </p>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3.5 py-1.5 rounded-full bg-ivory border border-sand-border text-xs font-semibold text-ink">Product & Catalog Mgmt</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-ivory border border-sand-border text-xs font-semibold text-ink">Order Fulfillment</span>
+            <span class="px-3.5 py-1.5 rounded-full bg-ivory border border-sand-border text-xs font-semibold text-ink">Klaviyo & Customer Care</span>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-8">
+          <div class="p-5 rounded-2xl bg-ivory border border-sand-border">
+            <div class="w-9 h-9 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze mb-3.5">
+              <i data-lucide="tags" class="w-4 h-4"></i>
+            </div>
+            <h4 class="font-serif text-lg font-semibold text-ink mb-2">Product Listing & Merchandising</h4>
+            <p class="text-xs sm:text-sm text-ink-soft leading-relaxed">
+              Uploaded and optimized product listings with SEO-ready descriptions, variant pricing, SKU mapping, high-resolution imagery, and curated collections.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-ivory border border-sand-border">
+            <div class="w-9 h-9 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze mb-3.5">
+              <i data-lucide="package-check" class="w-4 h-4"></i>
+            </div>
+            <h4 class="font-serif text-lg font-semibold text-ink mb-2">Order Processing & Inventory Sync</h4>
+            <p class="text-xs sm:text-sm text-ink-soft leading-relaxed">
+              Monitored daily order pipelines, coordinated supplier fulfillment, updated tracking notifications, and reconciled stock counts to prevent overselling.
+            </p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-ivory border border-sand-border">
+            <div class="w-9 h-9 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze mb-3.5">
+              <i data-lucide="percent" class="w-4 h-4"></i>
+            </div>
+            <h4 class="font-serif text-lg font-semibold text-ink mb-2">Promotions, Retention & Support</h4>
+            <p class="text-xs sm:text-sm text-ink-soft leading-relaxed">
+              Configured seasonal discount codes, assisted with Klaviyo email flows, resolved customer inquiries, and maintained sales & expense trackers.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="bg-sand text-bronze text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Calendar Mastery
+              </span>
+              <i data-lucide="calendar-check" class="w-4 h-4 text-bronze"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2.5">
+              Multi-Stream Executive Schedule Architecture
+            </h3>
+            <p class="text-xs sm:text-sm text-ink-soft leading-relaxed mb-5">
+              Structured monthly executive calendars (Nov–Dec 2026) with color-coded priority blocks, buffer zones, client onboarding pipelines, and conflict flagging.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-sand-border">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Google Calendar</span>
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Time Blocking</span>
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Client Pipeline</span>
+            </div>
+            <button type="button" onclick="openWorkModal('Multi-Stream Executive Schedule Architecture', 'Executive Calendar Management', 'work-calendar')"
+              class="w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink border border-sand-border hover:bg-ink hover:text-ivory hover:border-ink px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+              <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+              <span>View Schedule Gallery</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <span class="bg-sand text-bronze text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full">
+                Data & Bookkeeping
+              </span>
+              <i data-lucide="file-spreadsheet" class="w-4 h-4 text-bronze"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-2.5">
+              Monthly Accounts & Expense Reconciliation
+            </h3>
+            <p class="text-xs sm:text-sm text-ink-soft leading-relaxed mb-5">
+              Organized monthly operational ledgers tracking store revenue, vendor invoices, subscriptions, and clean audit-ready reporting spreadsheets.
+            </p>
+          </div>
+
+          <div class="pt-4 border-t border-sand-border">
+            <div class="flex flex-wrap gap-1.5 mb-4">
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Excel / Sheets</span>
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Expense Tracking</span>
+              <span class="px-2.5 py-1 rounded-md bg-ivory border border-sand-border text-[11px] font-medium text-ink">Data Accuracy</span>
+            </div>
+            <div class="flex flex-col gap-2">
+              <button type="button" onclick="openWorkModal('Monthly Accounts & Expense Reconciliation', 'Operations & Financial Reporting', 'work-accounts')"
+                class="w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink border border-sand-border hover:bg-ink hover:text-ivory hover:border-ink px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                <i data-lucide="eye" class="w-3.5 h-3.5"></i>
+                <span>View Report Overview</span>
+              </button>
+              <a href="October 2026 Accounts.xlsx" download
+                class="w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink border border-sand-border hover:bg-ink hover:text-ivory hover:border-ink px-4 py-2.5 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>View Excel File</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="technical-skills" class="w-full py-24 lg:py-28 bg-ivory bg-grain">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze block mb-3">03 / Tools & Systems</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink tracking-tight mb-4">
+          Technical <span class="italic font-normal text-bronze">Skills</span>
+        </h2>
+        <p class="text-sm sm:text-base text-ink-soft">
+          Proficient across modern productivity suites, social media platforms, email automation tools, and analytics dashboards.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="share-2" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">Social Media Management</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Instagram</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Facebook</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">TikTok</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Pinterest</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="kanban" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">Productivity & Project Mgmt</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Google Workspace</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Microsoft Office</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Trello</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Slack</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="palette" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">Graphic Design & Video</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Canva</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Basic Graphic Design</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Short-Form Video Editing</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="bar-chart-3" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">Analytics & Reporting</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Google Analytics</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Meta Business Suite</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Shopify Analytics</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="mail-check" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">Email Marketing & Automation</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Mailchimp</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Klaviyo</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-7 border border-sand-border hover:border-bronze/50 hover:shadow-[0_18px_38px_-15px_rgba(26,25,24,0.08)] transition-all duration-300 flex flex-col justify-between">
+          <div>
+            <div class="w-11 h-11 rounded-2xl bg-sand flex items-center justify-center text-bronze mb-5">
+              <i data-lucide="shopping-bag" class="w-5 h-5"></i>
+            </div>
+            <h3 class="font-serif text-2xl font-semibold text-ink mb-4">E-Commerce & Store Ops</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Shopify Admin</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Product & Collection Setup</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Inventory & Order Mgmt</span>
+            <span class="px-3 py-1.5 rounded-lg bg-ivory border border-sand-border text-xs font-medium text-ink">Discount Campaigns</span>
+          </div>
+        </div>
+
+        <div
+          class="reveal md:col-span-2 lg:col-span-3 bg-sand/70 rounded-3xl p-7 sm:p-8 border border-sand-border flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div class="flex items-start sm:items-center gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-ink text-ivory flex items-center justify-center flex-shrink-0">
+              <i data-lucide="folder-kanban" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-widest text-bronze block">Core Backbone</span>
+              <h3 class="font-serif text-2xl font-semibold text-ink">Administrative & Executive Support</h3>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-2 rounded-full bg-white border border-sand-border text-xs font-semibold text-ink">Calendar Management</span>
+            <span class="px-3.5 py-2 rounded-full bg-white border border-sand-border text-xs font-semibold text-ink">Email Management</span>
+            <span class="px-3.5 py-2 rounded-full bg-white border border-sand-border text-xs font-semibold text-ink">Document Preparation</span>
+            <span class="px-3.5 py-2 rounded-full bg-white border border-sand-border text-xs font-semibold text-ink">Task Coordination</span>
+            <span class="px-3.5 py-2 rounded-full bg-white border border-sand-border text-xs font-semibold text-ink">Workflow Organization</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="competencies" class="w-full py-24 lg:py-28 bg-white border-y border-sand-border">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-start">
+
+        <div class="lg:col-span-4 lg:sticky lg:top-28 reveal">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze block mb-3">04 / Executive DNA</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink tracking-tight leading-tight mb-5">
+            Core Skills & <span class="italic font-normal text-bronze">Competencies</span>
+          </h2>
+          <p class="text-sm sm:text-base text-ink-soft leading-relaxed mb-6">
+            Grounded in a Bachelor of Science in Mathematics, I bring structured problem-solving, analytical accuracy, and calm reliability to fast-moving business environments.
+          </p>
+          <div class="inline-flex items-center gap-3 px-4 py-3 rounded-2xl bg-ivory border border-sand-border">
+            <i data-lucide="lock" class="w-4 h-4 text-bronze"></i>
+            <span class="text-xs font-semibold text-ink">Discretion & Attention to Detail Guaranteed</span>
+          </div>
+        </div>
+
+        <div class="lg:col-span-8 grid sm:grid-cols-2 gap-4 reveal">
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Executive and Administrative Support</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Shopify Storefront & Inventory Operations</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="calendar" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Calendar and Email Management</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="kanban" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Project and Task Coordination</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="clock" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Time Management and Organization</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Professional Communication</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="file-text" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Document Preparation and Data Entry</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="layout" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Brand Management and Content Planning</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="bar-chart" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Social Media Analytics and Reporting</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="mail" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Email Marketing and Automation</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="headphones" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Client Relations and Customer Support</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="search" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Research and Problem-Solving</span>
+          </div>
+
+          <div class="flex items-center gap-4 p-4 rounded-2xl bg-ivory border border-sand-border hover:border-bronze/50 transition-colors">
+            <div class="w-10 h-10 rounded-xl bg-white border border-sand-border flex items-center justify-center text-bronze flex-shrink-0">
+              <i data-lucide="lock" class="w-4 h-4"></i>
+            </div>
+            <span class="text-sm font-semibold text-ink">Attention to Detail and Confidentiality</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="w-full py-24 lg:py-28 bg-ivory bg-grain">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16 reveal">
+        <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze block mb-3">05 / Credentials</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-ink tracking-tight mb-4">
+          Education & <span class="italic font-normal text-bronze">Certifications</span>
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+
+        <div class="reveal bg-white rounded-3xl p-8 border border-sand-border flex flex-col justify-between hover:border-bronze/50 hover:shadow-[0_20px_40px_-15px_rgba(26,25,24,0.08)] transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="bg-sand text-bronze text-xs font-bold px-3.5 py-1.5 rounded-full">
+                June 2019 – Apr 2023
+              </span>
+              <div class="w-10 h-10 rounded-full bg-ivory border border-sand-border flex items-center justify-center text-ink-soft">
+                <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <span class="text-[11px] font-bold uppercase tracking-widest text-bronze block mb-2">University Degree</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-ink leading-snug mb-2">
+              Bachelor of Science in Mathematics
+            </h3>
+            <p class="text-sm font-semibold text-ink-soft mb-1">University Of Northern Philippines</p>
+            <p class="text-xs font-medium text-ink-soft/80">Major in Mathematics</p>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-sand-border flex items-center gap-2 text-xs text-ink-soft font-medium">
+            <i data-lucide="check-circle-2" class="w-4 h-4 text-bronze"></i>
+            <span>Quantitative & Analytical Foundation</span>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-8 border border-sand-border flex flex-col justify-between hover:border-bronze/50 hover:shadow-[0_20px_40px_-15px_rgba(26,25,24,0.08)] transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="bg-sand text-bronze text-xs font-bold px-3.5 py-1.5 rounded-full">
+                Certification
+              </span>
+              <div class="w-10 h-10 rounded-full bg-ivory border border-sand-border flex items-center justify-center text-ink-soft">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <span class="text-[11px] font-bold uppercase tracking-widest text-bronze block mb-2">The VA Camp</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-ink leading-snug mb-2">
+              Virtual Assistant Course
+            </h3>
+            <p class="text-sm text-ink-soft">Executive & Administrative Operations</p>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-sand-border">
+            <button type="button" onclick="openCertModal('Virtual Assistant Course', 'The VA Camp', 'cert1.png')"
+              class="w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink border border-sand-border hover:bg-ink hover:text-ivory hover:border-ink px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+              <span>View Certificate</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="reveal bg-white rounded-3xl p-8 border border-sand-border flex flex-col justify-between hover:border-bronze/50 hover:shadow-[0_20px_40px_-15px_rgba(26,25,24,0.08)] transition-all duration-300">
+          <div>
+            <div class="flex items-center justify-between mb-6">
+              <span class="bg-sand text-bronze text-xs font-bold px-3.5 py-1.5 rounded-full">
+                Certification
+              </span>
+              <div class="w-10 h-10 rounded-full bg-ivory border border-sand-border flex items-center justify-center text-ink-soft">
+                <i data-lucide="award" class="w-5 h-5"></i>
+              </div>
+            </div>
+
+            <span class="text-[11px] font-bold uppercase tracking-widest text-bronze block mb-2">The VA Camp</span>
+            <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-ink leading-snug mb-2">
+              Social Media Management
+            </h3>
+            <p class="text-sm text-ink-soft">Content Strategy & Analytics</p>
+          </div>
+
+          <div class="mt-8 pt-5 border-t border-sand-border">
+            <button type="button" onclick="openCertModal('Social Media Management', 'The VA Camp', 'cert2.png')"
+              class="w-full inline-flex items-center justify-center gap-2 bg-ivory text-ink border border-sand-border hover:bg-ink hover:text-ivory hover:border-ink px-5 py-3 rounded-full text-xs font-semibold uppercase tracking-wider transition-all duration-300">
+              <i data-lucide="eye" class="w-4 h-4"></i>
+              <span>View Certificate</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="w-full px-6 py-16 bg-ivory">
+    <div class="max-w-6xl mx-auto reveal">
+      <div class="bg-ink text-ivory rounded-[2.5rem] p-10 sm:p-14 lg:p-16 relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-10">
+        <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-bronze/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-xl text-center lg:text-left relative z-10">
+          <span class="text-xs font-bold uppercase tracking-[0.2em] text-bronze-light block mb-3">Ready to Delegate?</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold leading-tight mb-4">
+            Let’s Bring Clarity to Your <span class="italic font-normal text-bronze-light">Operations.</span>
+          </h2>
+          <p class="text-sm sm:text-base text-ivory/75 leading-relaxed">
+            Whether you need reliable executive assistance, streamlined daily workflows, or consistent social media management, I am ready to support your business goals.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center gap-4 relative z-10">
+          <a href="mailto:crissaarzadon@gmail.com"
+            class="inline-flex items-center gap-2.5 bg-ivory text-ink px-7 py-4 rounded-full text-sm font-semibold hover:bg-bronze-light hover:text-white transition-all duration-300 shadow-lg">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span>Email Me</span>
+          </a>
+          <a href="https://www.linkedin.com/in/chrissa-arzadon-85952442a" target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-2.5 bg-white/10 text-ivory border border-white/15 px-7 py-4 rounded-full text-sm font-semibold hover:bg-white hover:text-ink transition-all duration-300">
+            <i class="bi bi-linkedin text-base leading-none"></i>
+            <span>Connect on LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-ivory text-ink py-10 border-t border-sand-border">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="text-center md:text-left">
+        <span class="font-serif font-semibold text-2xl tracking-tight text-ink block mb-1">
+          Chrissa <span class="italic font-normal text-bronze">Arzadon</span>
+        </span>
+        <p class="text-xs text-ink-soft">© <span id="year"></span> Chrissa Arzadon · Executive Virtual Assistant Portfolio</p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="mailto:crissaarzadon@gmail.com" aria-label="Email Me"
+          class="w-11 h-11 flex items-center justify-center bg-white text-ink border border-sand-border rounded-full hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300">
+          <i data-lucide="mail" class="w-4 h-4"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/chrissa-arzadon-85952442a" target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn Profile"
+          class="w-11 h-11 flex items-center justify-center bg-white text-ink border border-sand-border rounded-full hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300">
+          <i class="bi bi-linkedin text-base leading-none"></i>
+        </a>
+        <a href="https://bit.ly/Instagramchrissacabradilla" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram Profile"
+          class="w-11 h-11 flex items-center justify-center bg-white text-ink border border-sand-border rounded-full hover:bg-ink hover:text-ivory hover:border-ink transition-all duration-300">
+          <i class="bi bi-instagram text-base leading-none"></i>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <div id="certModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/70 backdrop-blur-sm p-4 transition-opacity"
+    onclick="closeCertModal()">
+    <div class="bg-ivory rounded-[2rem] max-w-2xl w-full p-6 sm:p-8 border border-sand-border shadow-2xl relative"
+      onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <span id="modalIssuer" class="text-xs font-bold uppercase tracking-widest text-bronze block mb-0.5">The VA Camp</span>
+          <h3 id="modalTitle" class="font-serif text-2xl sm:text-3xl font-semibold text-ink">Certificate Title</h3>
+        </div>
+        <button type="button" onclick="closeCertModal()" aria-label="Close Modal"
+          class="w-10 h-10 rounded-full bg-sand text-ink hover:bg-ink hover:text-ivory flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl border border-sand-border overflow-hidden flex items-center justify-center min-h-[260px] max-h-[68vh] p-2">
+        <img id="modalImage" src="cert1.png" alt="Certificate Preview" class="w-full h-auto max-h-[64vh] object-contain rounded-xl">
+      </div>
+    </div>
+  </div>
+
+  <div id="workModal"
+    class="fixed inset-0 z-50 hidden items-center justify-center bg-ink/70 backdrop-blur-sm p-4 transition-opacity"
+    onclick="closeWorkModal()">
+    <div class="bg-ivory rounded-[2rem] max-w-4xl w-full p-6 sm:p-8 border border-sand-border shadow-2xl relative"
+      onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <span id="workModalCategory" class="text-xs font-bold uppercase tracking-widest text-bronze block mb-0.5">Category</span>
+          <h3 id="workModalTitle" class="font-serif text-2xl sm:text-3xl font-semibold text-ink">Work Sample Title</h3>
+        </div>
+        <button type="button" onclick="closeWorkModal()" aria-label="Close Work Modal"
+          class="w-10 h-10 rounded-full bg-sand text-ink hover:bg-ink hover:text-ivory flex items-center justify-center transition-colors">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div id="workModalBody" class="bg-white rounded-2xl border border-sand-border p-6 text-sm text-ink-soft space-y-6 max-h-[72vh] overflow-y-auto">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    function copyEmail(button) {
+      navigator.clipboard.writeText('crissaarzadon@gmail.com').then(() => {
+        const label = button.querySelector('.copy-label');
+        const originalText = label.textContent;
+        label.textContent = 'Copied!';
+        setTimeout(() => {
+          label.textContent = originalText;
+        }, 2000);
+      });
+    }
+
+    function openCertModal(title, issuer, imgSrc) {
+      document.getElementById('modalTitle').textContent = title;
+      document.getElementById('modalIssuer').textContent = issuer;
+      document.getElementById('modalImage').src = imgSrc;
+      const modal = document.getElementById('certModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCertModal() {
+      const modal = document.getElementById('certModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    function openWorkModal(title, category, type) {
+      document.getElementById('workModalTitle').textContent = title;
+      document.getElementById('workModalCategory').textContent = category;
+      const body = document.getElementById('workModalBody');
+
+      if (type === 'work-calendar') {
+        body.innerHTML = `
+          <p class="text-ink font-medium mb-1">Executive Calendar & Schedule Architecture:</p>
+          <p class="text-xs text-ink-soft mb-4">Preview of structured monthly executive schedules (November & December 2026) featuring time-blocking, priority color-coding, client onboarding pipelines, and buffer management.</p>
+          <div class="space-y-4">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-wider text-bronze mb-2">November 2026 Schedule</p>
+              <img src="work1.png" alt="November 2026 Calendar" class="w-full h-auto rounded-xl border border-sand-border shadow-sm">
+            </div>
+            <div class="pt-2">
+              <p class="text-xs font-bold uppercase tracking-wider text-bronze mb-2">December 2026 Schedule</p>
+              <img src="work2.png" alt="December 2026 Calendar" class="w-full h-auto rounded-xl border border-sand-border shadow-sm">
+            </div>
+          </div>
+        `;
+      } else if (type === 'work-accounts') {
+        body.innerHTML = `
+          <div>
+            <p class="text-ink font-semibold text-base mb-2">October 2026 Financial & Accounts Summary</p>
+            <p class="text-xs text-ink-soft mb-4">Complete breakdown of income, operational expenses, net activity, and unpaid vendor bills based on the October 2026 Accounts ledger.</p>
+            
+            <!-- Summary Stats Grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6">
+              <div class="bg-ivory p-3.5 rounded-xl border border-sand-border">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft block">Total Income</span>
+                <span class="text-lg font-serif font-semibold text-ink">$4,725.00</span>
+              </div>
+              <div class="bg-ivory p-3.5 rounded-xl border border-sand-border">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft block">Total Expenses</span>
+                <span class="text-lg font-serif font-semibold text-ink">$1,169.36</span>
+              </div>
+              <div class="bg-ivory p-3.5 rounded-xl border border-sand-border">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft block">Net Activity</span>
+                <span class="text-lg font-serif font-semibold text-bronze">$3,555.64</span>
+              </div>
+              <div class="bg-ivory p-3.5 rounded-xl border border-sand-border">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft block">Transactions</span>
+                <span class="text-lg font-serif font-semibold text-ink">18</span>
+              </div>
+              <div class="bg-ivory p-3.5 rounded-xl border border-sand-border col-span-2">
+                <span class="text-[11px] uppercase tracking-wider font-semibold text-ink-soft block">Unpaid Vendor Bills</span>
+                <span class="text-lg font-serif font-semibold text-ink">$491.21 (3 bills)</span>
+              </div>
+            </div>
+
+            <!-- Ledger Table Preview -->
+            <p class="text-xs font-bold uppercase tracking-wider text-bronze mb-2">Sample Ledger Transactions</p>
+            <div class="overflow-x-auto rounded-xl border border-sand-border mb-6">
+              <table class="w-full text-left border-collapse text-xs">
+                <thead>
+                  <tr class="bg-sand text-ink font-semibold border-b border-sand-border">
+                    <th class="p-2.5">Date</th>
+                    <th class="p-2.5">Reference</th>
+                    <th class="p-2.5">Description</th>
+                    <th class="p-2.5">Type</th>
+                    <th class="p-2.5 text-right">Amount</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-sand-border">
+                  <tr>
+                    <td class="p-2.5">2026-10-01</td>
+                    <td class="p-2.5 font-medium">DEP-1001</td>
+                    <td class="p-2.5">Customer payment – Greenfield Rentals</td>
+                    <td class="p-2.5 text-emerald-700 font-medium">Income</td>
+                    <td class="p-2.5 text-right font-medium">$1,250.00</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5">2026-10-01</td>
+                    <td class="p-2.5 font-medium">EXP-1001</td>
+                    <td class="p-2.5">Fuel for service vehicle</td>
+                    <td class="p-2.5 text-rose-700 font-medium">Expense</td>
+                    <td class="p-2.5 text-right font-medium">$68.45</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5">2026-10-02</td>
+                    <td class="p-2.5 font-medium">INV-204</td>
+                    <td class="p-2.5">Monthly home maintenance – Carter</td>
+                    <td class="p-2.5 text-emerald-700 font-medium">Income</td>
+                    <td class="p-2.5 text-right font-medium">$875.00</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5">2026-10-02</td>
+                    <td class="p-2.5 font-medium">RCPT-551</td>
+                    <td class="p-2.5">Copy paper and printer ink</td>
+                    <td class="p-2.5 text-rose-700 font-medium">Expense</td>
+                    <td class="p-2.5 text-right font-medium">$94.80</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2.5">2026-10-03</td>
+                    <td class="p-2.5 font-medium">BILL-301</td>
+                    <td class="p-2.5">Electricity – October (Lone Star Electric)</td>
+                    <td class="p-2.5 text-rose-700 font-medium">Expense</td>
+                    <td class="p-2.5 text-right font-medium">$186.22</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Vendor Bills -->
+            <p class="text-xs font-bold uppercase tracking-wider text-bronze mb-2">Vendor Bills Tracked</p>
+            <div class="space-y-2 text-xs">
+              <div class="p-3 rounded-xl bg-ivory border border-sand-border flex items-center justify-between">
+                <div>
+                  <span class="font-semibold text-ink">Lone Star Electric (BILL-301)</span>
+                  <span class="text-ink-soft block">Electricity – October · Due: 2026-10-17</span>
+                </div>
+                <span class="font-semibold text-rose-700">$186.22 (Unpaid)</span>
+              </div>
+              <div class="p-3 rounded-xl bg-ivory border border-sand-border flex items-center justify-between">
+                <div>
+                  <span class="font-semibold text-ink">MetroNet Business (MN-441)</span>
+                  <span class="text-ink-soft block">Business internet service · Due: 2026-10-21</span>
+                </div>
+                <span class="font-semibold text-rose-700">$89.99 (Unpaid)</span>
+              </div>
+              <div class="p-3 rounded-xl bg-ivory border border-sand-border flex items-center justify-between">
+                <div>
+                  <span class="font-semibold text-ink">ShieldSure Insurance (BILL-303)</span>
+                  <span class="text-ink-soft block">General liability insurance · Due: 2026-10-13</span>
+                </div>
+                <span class="font-semibold text-rose-700">$215.00 (Unpaid)</span>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      const modal = document.getElementById('workModal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeWorkModal() {
+      const modal = document.getElementById('workModal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeCertModal();
+        closeWorkModal();
+      }
+    });
+
+    const revealElements = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealElements.forEach(el => observer.observe(el));
+  </script>
+</body>
+
+</html>
